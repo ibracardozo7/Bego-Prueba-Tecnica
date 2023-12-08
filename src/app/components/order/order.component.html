@@ -14,18 +14,25 @@
       </div>
     </div>
 
-    <div class="list" *ngFor="let dest of order.destinations">
-      <div class="pickup">
+    <div class="address-svg">
+      <div class="icon">
         <img src="assets/Order 1/where to/address/Group 2.svg" alt="" />
-        <div class="">
-          <p class="name">{{ dest.nickname }}</p>
-          <p class="city">NewYour</p>
-          <p class="address">{{ dest.address }}</p>
-        </div>
+        <img class="marker" src="assets/marker.svg" alt="" />
       </div>
-      <div class="date">
-        <p>{{ dest.start_date | date : "shortDate" }}</p>
-        <p>10:45</p>
+      <div class="list-main">
+        <div class="list" *ngFor="let dest of order.destinations">
+          <div class="pickup">
+            <div class="">
+              <p class="name">{{ dest.nickname }}</p>
+              <p class="city">NewYour</p>
+              <p class="address">{{ dest.address }}</p>
+            </div>
+          </div>
+          <div class="date">
+            <p>{{ dest.start_date | date : "shortDate" }}</p>
+            <p>10:45</p>
+          </div>
+        </div>
       </div>
     </div>
 

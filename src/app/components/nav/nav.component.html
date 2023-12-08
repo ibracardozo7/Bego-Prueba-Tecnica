@@ -1,23 +1,21 @@
-<div>
-  <ul class="filters">
-    <li>
-      <a
-        (click)="changeFilter('upcoming')"
-        [class.selected]="filter() === 'upcoming'"
-        >Upcoming</a
-      >
-    </li>
-    <li>
-      <a
-        (click)="changeFilter('completed')"
-        [class.selected]="filter() === 'completed'"
-        >Completed</a
-      >
-    </li>
-    <li>
-      <a (click)="changeFilter('past')" [class.selected]="filter() === 'past'"
-        >Past</a
-      >
-    </li>
-  </ul>
-</div>
+<ul class="filters">
+  <li>
+    <a
+      (click)="changeFilter('upcoming')"
+      [class.selected]="filter() === 'upcoming'"
+      >Upcoming</a
+    >
+  </li>
+  <li>
+    <a
+      (click)="changeFilter('completed')"
+      [class.selected]="filter() === 'completed'"
+      >Completed</a
+    >
+  </li>
+  <li>
+    <a (click)="changeFilter('past')" [class.selected]="filter() === 'past'"
+      >Past</a
+    >
+  </li>
+</ul>

@@ -45,13 +45,39 @@
     }
   }
 
+  .address-svg {
+    display: flex;
+    // justify-content: space-between;
+    padding: 0 20px;
+    margin-bottom: 15px;
+
+    .icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      padding-right: 15px;
+      padding-top: 20px;
+
+      .marker {
+        width: 20px;
+        height: 24px;
+      }
+    }
+
+    .list-main {
+      width: 100%;
+    }
+  }
+
   .list {
-    max-width: 350px;
+    // max-width: 350px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 0 19px;
-    margin: 36px 0;
+    // padding: 0 19px;
+    margin: 36px 0 25px 0;
     overflow: hidden;
 
     .pickup {
