@@ -1,0 +1,7 @@
+<div class="container">
+  <app-header />
+  <app-search />
+  <div class="list">
+    <app-order *ngFor="let order of orders()" [order]="order" />
+  </div>
+</div>

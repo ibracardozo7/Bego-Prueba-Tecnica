@@ -1,0 +1,130 @@
+.container {
+  // margin: 0 auto;
+  min-width: 350px;
+  // margin-bottom: 40px;
+}
+
+.order {
+  color: #CDCDCD;
+  font-size: 18px;
+  margin-bottom: 18px;
+  span {
+    color: #FFFFFF;
+  }
+}
+
+.cart {
+  max-width: 350px;
+  border: 0.5px solid #252525;
+  border-radius: 25px;
+  background: linear-gradient(45deg, #080C0F 0%, rgba(39,39,39,0) 100%);
+  margin-bottom: 40px;
+
+  .type {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid #252525;
+
+    .ftl {
+      display: flex;
+      gap: 12px;
+    }
+
+    .orden {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      
+      .circle {
+        width: 11px;
+        height: 11px;
+        background-color: #0394ff;
+        border-radius: 100%;
+      }
+    }
+  }
+
+  .list {
+    max-width: 350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 19px;
+    margin: 36px 0;
+    overflow: hidden;
+
+    .pickup {
+      display: flex;
+      gap: 12px;
+
+      .name {
+        margin: 0;
+        margin-bottom: 5px;
+        font-size: 10px;
+        color: #7B7B7B;
+      }
+
+      .city {
+        margin: 0;
+        font-size: 14px;
+        margin-bottom: 2px;
+      }
+      
+      .address {
+        width: 180px;
+        margin: 0;
+        font-size: 14px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .date {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      gap: 2px;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  .btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .start {
+      background: linear-gradient(45deg, #080C0F 0%, rgba(38,38,38,0.64) 100%);
+      color: #FFFFFF;
+      padding: 16px 24px;
+      font-weight: 900;
+      border-radius: 0 25px 25px 25px;
+      border: none;
+
+      span {
+        color: #FFFF00;
+      }
+    }
+
+    .resume {
+      height: 45px;
+      background-color: #FFFF00;
+      border: none;
+      padding: 0 19px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+    }
+  }
+}

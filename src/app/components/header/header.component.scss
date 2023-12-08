@@ -1,0 +1,15 @@
+.header {
+  height: 27.5px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 79px;
+  margin-bottom: 64px;
+
+  p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
