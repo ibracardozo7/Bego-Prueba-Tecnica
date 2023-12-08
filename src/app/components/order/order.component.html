@@ -30,9 +30,13 @@
     </div>
 
     <div class="btn">
-      <button class="start">
+      @if (contador === 0) {
+      <button class="btn-container end">Its time for pickups</button>
+      } @else {
+      <button class="btn-container start">
         Start pickup in <span>{{ order.start_date | date : "hh:mm" }}</span>
       </button>
+      }
       <button routerLink="/details" class="resume">
         Resume
         <img src="assets/Group 4-1/eye.svg" alt="" />

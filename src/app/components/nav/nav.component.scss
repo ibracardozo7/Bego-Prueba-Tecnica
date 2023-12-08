@@ -1,0 +1,25 @@
+.filters {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 45px;
+  padding: 0;
+  
+  li {
+    display: inline;
+    
+    a {
+      font-size: 18px;
+      margin: 3px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    a.selected {
+      color: #FFFF00;
+      border-bottom: 1px solid #FFFF00;
+      font-weight: 500;
+    }
+  }
+}

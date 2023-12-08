@@ -99,21 +99,34 @@
     justify-content: space-between;
     align-items: flex-end;
 
+    .btn-container {
+      max-width: 199px;
+      border-radius: 0 25px 25px 25px;
+    }
+    
     .start {
       background: linear-gradient(45deg, #080C0F 0%, rgba(38,38,38,0.64) 100%);
       color: #FFFFFF;
-      padding: 16px 24px;
-      font-weight: 900;
-      border-radius: 0 25px 25px 25px;
       border: none;
-
+      font-weight: 800;
+      padding: 16px 20px;
+      
       span {
         color: #FFFF00;
       }
     }
+    
+    .end {
+      padding: 16px 24px;
+      background-color: #FFFF00;
+      font-weight: 600;
+      border: none;
+      font-size: 14px;
+      color: #080C0F;
+    }
 
     .resume {
-      height: 45px;
+      height: 44px;
       background-color: #FFFF00;
       color: #080C0F;
       border: none;

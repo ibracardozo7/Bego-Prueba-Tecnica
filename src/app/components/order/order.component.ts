@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, signal, Output, EventEmitter } from '@angular/core';
 import { Result } from '../../models/order.model';
 import { CommonModule } from '@angular/common';
 import { RouterLinkWithHref } from '@angular/router';
@@ -12,4 +12,17 @@ import { RouterLinkWithHref } from '@angular/router';
 })
 export class OrderComponent {
   @Input() order!: Result;
+
+  contador: number = 5;
+
+  ngOnInit() {
+    const intervalo = setInterval(() => {
+      if (this.contador === 0) {
+        clearInterval(intervalo); // Detiene el contador cuando llega a 0
+      } else {
+        console.log(this.contador);
+        this.contador--;
+      }
+    }, 1000);
+  }
 }

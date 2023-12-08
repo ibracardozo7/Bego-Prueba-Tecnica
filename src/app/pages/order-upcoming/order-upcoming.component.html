@@ -1,5 +1,8 @@
 <div class="container">
   <app-header title="Upcoming" />
+  <!-- @if (contador === 0) {
+  } -->
+  <app-nav />
   <app-search />
   <div class="list">
     <app-order *ngFor="let order of orders()" [order]="order" />
