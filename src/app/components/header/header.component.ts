@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterLinkWithHref } from '@angular/router';
 
 @Component({
@@ -6,8 +6,8 @@ import { RouterLinkWithHref } from '@angular/router';
   standalone: true,
   imports: [RouterLinkWithHref],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-
+  @Input({ required: true }) title = '';
 }

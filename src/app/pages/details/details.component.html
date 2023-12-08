@@ -1,33 +1,34 @@
 <div class="container">
-  <app-header />
+  <app-header title="Cargo Details" />
 
   <div class="order-main">
-    <div class="">
-      <span>Referencia A1180</span>
-      <h4>Order #7804GNZ</h4>
+    <div class="ref-orden">
+      <p>Referencia {{ details()?.reference_number }}</p>
+      <h4>Order #{{ details()?.order_number }}</h4>
     </div>
-    <div>
-      <div>
-        <span>PickUp</span>
-        <p>New York</p>
-        <p>25 Mortada Street</p>
-      </div>
-      <div>
-        Aceepted
+    <div class="list" *ngFor="let dest of details()?.destinations">
+      <!-- <div> -->
+      <span>PickUp</span>
+      <p class="city">New York</p>
+      <p class="address">{{ dest.address }}</p>
+      <!-- </div> -->
+      <div class="state">
+        <div class="circle"></div>
+        <p>Aceepted</p>
       </div>
     </div>
   </div>
 
   <div class="order">
     <div class="photo">
-      <img src="assets/Driver.png" alt="image">
+      <img src="assets/Driver.png" alt="image" />
     </div>
     <p class="date">10:30 PM</p>
 
     <div class="state">
       <p>Created Order</p>
       <p>Aceepted Order</p>
-      <p class="pickup" >Pickup set up by William</p>
+      <p class="pickup">Pickup set up by William</p>
       <p class="pickup">Pick Completed</p>
     </div>
 
