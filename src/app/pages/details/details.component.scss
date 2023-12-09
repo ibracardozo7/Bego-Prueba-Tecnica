@@ -41,6 +41,7 @@
       gap: 13px;
       align-items: center;
       margin-right: 20px;
+      margin-bottom: 20px;
 
       .truck {
         width: 40px;
@@ -148,6 +149,35 @@
     }
   }
 
+  .state-main {
+    display: flex;
+    // align-items: center;
+    gap: 26px;
+
+    .check-main {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 30px;
+
+      .check {
+        width: 26px;
+        height: 26px;
+        background-color: #FFFF00;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        svg {
+          width: 75%;
+          height: 75%;
+          color: #080C0F;
+        }
+      }
+    }
+  }
+
   .date {
     font-size: 20px;
     font-weight: 600;
@@ -155,14 +185,20 @@
   }
   
   .state {
+    margin-top: 30px;
     margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     p {
+      margin: 0;
       font-weight: 600;
     }
     .pickup {
       color: #5B5B5B;
     }
   }
+
   .trackOrder {
     width: 100%;
     padding: 20px 0;
