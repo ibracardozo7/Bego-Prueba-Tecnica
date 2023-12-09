@@ -1,96 +1,101 @@
 <div class="main">
   <app-header title="Cargo Details" />
 
-  <section class="container">
-    <div class="ref-order">
-      <p>Referencia {{ details()?.reference_number }}</p>
-      <h4>Order #{{ details()?.order_number }}</h4>
-    </div>
-    <div class="destino">
-      <div class="icons">
-        <div class="truck">
-          <div class="bg">
-            <img src="assets/truck.svg" alt="" />
+  @if (details()) {
+    <section class="container">
+      <div class="ref-order">
+        <p>Referencia {{ details()?.reference_number }}</p>
+        <h4>Order #{{ details()?.order_number }}</h4>
+      </div>
+      <div class="destino">
+        <div class="icons">
+          <div class="truck">
+            <div class="bg">
+              <img src="assets/truck.svg" alt="" />
+            </div>
+          </div>
+          <div class="linea"></div>
+          <div class="circle">
+            <div class="circle-1"></div>
           </div>
         </div>
-        <div class="linea"></div>
-        <div class="circle">
-          <div class="circle-1"></div>
-        </div>
-      </div>
-      <div class="list-main">
-        <div class="list" *ngFor="let dest of details()?.destinations">
-          <!-- <div> -->
-          <span>{{ dest.status_string }}</span>
-          <p class="city">New York</p>
-          <p class="address">{{ dest.address }}</p>
-          <!-- </div> -->
-          <div class="state">
-            <div class="circle" [class.color]="dest.status == 0"></div>
-            <p>{{ dest.status_string }}</p>
+        <div class="list-main">
+          <div class="list" *ngFor="let dest of details()?.destinations">
+            <!-- <div> -->
+            <span>{{ dest.status_string }}</span>
+            <p class="city">New York</p>
+            <p class="address">{{ dest.address }}</p>
+            <!-- </div> -->
+            <div class="state">
+              <div class="circle" [class.color]="dest.status == 0"></div>
+              <p>{{ dest.status_string }}</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="order">
-    <div class="photo">
-      <div class="oval-1">
-        <img src="assets/driver1.png" alt="image" />
+    </section>
+  
+    <section class="order">
+      <div class="photo">
+        <div class="oval-1">
+          <img src="assets/driver1.png" alt="image" />
+        </div>
       </div>
-    </div>
-    <p class="date">10:30 PM</p>
-
-    <div class="state-main">
-      <div class="item">
-        <app-check />
-        <p>Created Order</p>
+      <p class="date">{{details()?.end_date | date: "hh:mm"}}</p>
+  
+      <div class="state-main">
+        <div class="item">
+          <app-check />
+          <p>Created Order</p>
+        </div>
+        <div class="item">
+          <app-check />
+          <p>Aceepted Order</p>
+        </div>
+        <div class="item">
+          <app-check />
+          <p class="pickup">
+            Pickup set up by {{ (details()?.driver?.nickname?.split(" "))![0] }}
+          </p>
+        </div>
+        <div class="item">
+          <app-not-check />
+          <p class="pickup">Pick Completed</p>
+        </div>
       </div>
-      <div class="item">
-        <app-check />
-        <p>Aceepted Order</p>
-      </div>
-      <div class="item">
-        <app-check />
-        <p class="pickup">
-          Pickup set up by {{ (details()?.driver?.nickname?.split(" "))![0] }}
+  
+      <button class="trackOrder" [class.active]="details()?.stamp">
+        Track Order
+      </button>
+    </section>
+  
+    <section class="pickupData" (click)="toggle()">
+      <h3>Pickup Data</h3>
+      <img
+        src="assets/angle-small-down.svg"
+        alt="angle"
+        [class.rotate]="!footer"
+      />
+    </section>
+  
+    <footer class="footer" *ngIf="footer">
+      <p>
+        Isidro Fabela 10, valle verde y Terminal, 50140 Tocula de Lerdo, Mexico.
+      </p>
+      <div class="date">
+        <p>{{ details()?.start_date | date : "d MMMM, y" }}</p>
+        <h3>•</h3>
+        <p>
+          {{ details()?.start_date | date : "hh:mm" }}
         </p>
       </div>
-      <div class="item">
-        <app-not-check />
-        <p class="pickup">Pick Completed</p>
-      </div>
+      <p>{{ details()?.driver?.telephone }}</p>
+      <p>{{ details()?.driver?.email }}</p>
+    </footer>
+  } @else {
+    <div class="loading">
+      <p>Loading..</p>
+      <div class="loader"></div>
     </div>
-
-    <button class="trackOrder" [class.active]="details()?.stamp">
-      Track Order
-    </button>
-  </section>
-
-  <!-- <app-pickp-data [driver]="driver" /> -->
-
-  <section class="pickupData" (click)="toggle()">
-    <h3>Pickup Data</h3>
-    <img
-      src="assets/angle-small-down.svg"
-      alt="angle"
-      [class.rotate]="!footer"
-    />
-  </section>
-
-  <footer class="footer" *ngIf="footer">
-    <p>
-      Isidro Fabela 10, valle verde y Terminal, 50140 Tocula de Lerdo, Mexico.
-    </p>
-    <div class="date">
-      <p>{{ details()?.start_date | date : "d MMMM, y" }}</p>
-      <h3>•</h3>
-      <p>
-        {{ details()?.start_date | date : "hh:mm" }}
-      </p>
-    </div>
-    <p>{{ details()?.driver?.telephone }}</p>
-    <p>{{ details()?.driver?.email }}</p>
-  </footer>
+  }
 </div>
