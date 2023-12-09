@@ -1,9 +1,9 @@
-<!-- <div class="container"> -->
+<article class="container">
   <h1 class="order">
     Order <span>#{{ order.order_number }}</span>
   </h1>
   <div class="cart">
-    <div class="header">
+    <header class="header">
       <div class="type">
         <img src="assets/container-truck.svg" alt="" />
         <p>{{ order.type }}</p>
@@ -12,9 +12,9 @@
         <div class="circle" [class.color]="order.status == 1"></div>
         <p>{{ order.status_string }}</p>
       </div>
-    </div>
+    </header>
 
-    <div class="destinations">
+    <section class="destinations">
       <div class="icons">
         <img src="assets/Group 2.svg" alt="" />
         <div class="line" ></div>
@@ -35,9 +35,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="btn-container">
+    <footer class="btn-container">
       @if (order.status == 3) {
       <button class="btn end">Its time for pickups</button>
       } @else {
@@ -49,6 +49,6 @@
         Resume
         <img src="assets/Group 4-1/eye.svg" alt="" />
       </button>
-    </div>
+    </footer>
   </div>
-<!-- </div> -->
+</article>
