@@ -1,0 +1,26 @@
+.check {
+  width: 26px;
+  height: 26px;
+  background-color: rgba(216,216,216,0.08);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .oval-1 {
+    width: 18px;
+    height: 18px;
+    background-color: rgba(151,151,151,0.2);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .oval-2 {
+    width: 10px;
+    height: 10px;
+    background-color: #939393;
+    border-radius: 100%;
+  }
+}

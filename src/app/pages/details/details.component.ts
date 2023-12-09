@@ -5,11 +5,18 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { CommonModule } from '@angular/common';
 import { PickpDataComponent } from '../../components/pickp-data/pickp-data.component';
 import { CheckComponent } from '../../components/check/check.component';
+import { NotCheckComponent } from '../../components/not-check/not-check.component';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, PickpDataComponent, CheckComponent],
+  imports: [
+    CommonModule,
+    HeaderComponent,
+    PickpDataComponent,
+    CheckComponent,
+    NotCheckComponent,
+  ],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss',
 })
@@ -22,7 +29,7 @@ export class DetailsComponent {
   toggle() {
     this.footer = !this.footer;
   }
-  
+
   ngOnInit() {
     this.ordersServices.getOrders().subscribe({
       next: (res) => {

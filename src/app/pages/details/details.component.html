@@ -14,7 +14,9 @@
           </div>
         </div>
         <div class="linea"></div>
-        <div class="circle"></div>
+        <div class="circle">
+          <div class="circle-1"></div>
+        </div>
       </div>
       <div class="list-main">
         <div class="list" *ngFor="let dest of details()?.destinations">
@@ -54,7 +56,7 @@
         </p>
       </div>
       <div class="item">
-        <app-check />
+        <app-not-check />
         <p class="pickup">Pick Completed</p>
       </div>
     </div>
@@ -68,7 +70,11 @@
 
   <div class="pickupData" (click)="toggle()">
     <h3>Pickup Data</h3>
-    <img src="assets/angle-small-down.svg" alt="" />
+    <img
+      src="assets/angle-small-down.svg"
+      alt="angle"
+      [class.rotate]="!footer"
+    />
   </div>
 
   <div class="footer" *ngIf="footer">
