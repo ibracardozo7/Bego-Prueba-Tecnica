@@ -1,6 +1,8 @@
-<app-header title="Cargo Orders" />
-<app-nav (filterName)="nameFilter($event)" />
-<app-search />
-<div class="list">
-  <app-order *ngFor="let order of ordersByFilter()" [order]="order" />
+<div class="container">
+  <app-header title="Cargo Orders" />
+  <app-nav (filterName)="nameFilter($event)" />
+  <app-search (searchFilter)="searchFilter($event)" />
+  <div class="list">
+    <app-order *ngFor="let order of ordersByFilter()" [order]="order" />
+  </div>
 </div>

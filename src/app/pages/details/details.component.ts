@@ -18,6 +18,11 @@ export class DetailsComponent {
   driver!: Result;
   private ordersServices = inject(OrdersService);
 
+  footer: boolean = true;
+  toggle() {
+    this.footer = !this.footer;
+  }
+  
   ngOnInit() {
     this.ordersServices.getOrders().subscribe({
       next: (res) => {

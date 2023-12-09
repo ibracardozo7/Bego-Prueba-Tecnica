@@ -1,1 +1,21 @@
+<!-- <div class="main"> -->
+  <div class="pickupData" (click)="toggle()">
+    <h3>Pickup Data</h3>
+    <img src="assets/angle-small-down.svg" alt="" />
+  </div>
 
+  <div class="footer" *ngIf="footer">
+    <p>
+      Isidro Fabela 10, valle verde y Terminal, 50140 Tocula de Lerdo, Mexico.
+    </p>
+    <div class="date">
+      <p>{{ driver.start_date | date : "d MMMM, y" }}</p>
+      <h3>•</h3>
+      <p>
+        {{ driver.start_date | date : "hh:mm" }}
+      </p>
+    </div>
+    <p>{{ driver.driver.telephone }}</p>
+    <p>{{ driver.driver.email }}</p>
+  </div>
+<!-- </div> -->

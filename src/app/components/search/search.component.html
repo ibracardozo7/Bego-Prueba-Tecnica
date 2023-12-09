@@ -4,5 +4,10 @@
       <img src="assets/Search/Group/search.svg" alt="" />
     </div>
   </div>
-  <input type="text" placeholder="Search.." />
+  <input
+    type="text"
+    placeholder="Search.."
+    [formControl]="orderFilter"
+    (keydown.enter)="changeHandler()"
+  />
 </div>

@@ -23,8 +23,10 @@ import { NavComponent } from '../../components/nav/nav.component';
 export class OrderUpcomingComponent {
   orders = signal<Result[]>([]);
   filter = signal('');
+  search = '';
+
   private ordersServices = inject(OrdersService);
-  
+
   ordersByFilter = computed(() => {
     const filter = this.filter();
     const orders = this.orders();
@@ -47,11 +49,15 @@ export class OrderUpcomingComponent {
     });
 
     // console.log("name =>",this.filter);
-    
   }
 
-  nameFilter(name: string) {
+  nameFilter(name: 'upcoming' | 'completed' | 'past') {
     console.log(name);
-    this.filter.set(name)
+    this.filter.set(name);
+  }
+
+  searchFilter(order: any) {
+    console.log(order);
+    this.search = order;
   }
 }

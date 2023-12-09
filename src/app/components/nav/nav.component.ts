@@ -9,19 +9,17 @@ import { RouterLink } from '@angular/router';
   styleUrl: './nav.component.scss',
 })
 export class NavComponent {
-  filter = "upcoming";
+  filter: 'upcoming' | 'completed' | 'past' = 'upcoming';
 
   @Output() filterName = new EventEmitter();
 
   changeFilter(filter: 'upcoming' | 'completed' | 'past') {
-    this.filter = filter
-    // console.log(filter);
-    
+    this.filter = filter;
   }
 
   filterNameHandler() {
     console.log('mandando name');
-    const filter = this.filter
-    this.filterName.emit(filter)
+    const filter = this.filter;
+    this.filterName.emit(filter);
   }
 }

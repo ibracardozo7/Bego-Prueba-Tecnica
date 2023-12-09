@@ -12,4 +12,8 @@ import { CommonModule } from '@angular/common';
 })
 export class PickpDataComponent {
   @Input() driver!: Result;
+  footer: boolean = true;
+  toggle() {
+    this.footer = !this.footer;
+  }
 }
