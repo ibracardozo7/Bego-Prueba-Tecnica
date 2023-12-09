@@ -26,9 +26,9 @@ export class SearchComponent {
       const value = this.orderFilter.value.trim();
       console.log(value);
 
-      if (value !== '') {
+      if (value) {
         // this.addTask(value);
-        // this.newTaskCtrl.setValue('');
+        this.searchFilter.emit(value)
       }
     }
   }

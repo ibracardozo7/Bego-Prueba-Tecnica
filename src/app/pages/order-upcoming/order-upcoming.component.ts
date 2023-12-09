@@ -23,7 +23,7 @@ import { NavComponent } from '../../components/nav/nav.component';
 export class OrderUpcomingComponent {
   orders = signal<Result[]>([]);
   filter = signal('');
-  search = '';
+  search = signal('');
 
   private ordersServices = inject(OrdersService);
 
@@ -44,7 +44,7 @@ export class OrderUpcomingComponent {
 
   ngOnInit() {
     this.ordersServices.getOrdersUpcoming().subscribe((res) => {
-      console.log(res.result);
+      // console.log(res.result);
       this.orders.set(res.result);
     });
 
@@ -58,6 +58,6 @@ export class OrderUpcomingComponent {
 
   searchFilter(order: any) {
     console.log(order);
-    this.search = order;
+    this.search.set(order);
   }
 }

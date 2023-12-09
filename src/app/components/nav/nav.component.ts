@@ -13,13 +13,13 @@ export class NavComponent {
 
   @Output() filterName = new EventEmitter();
 
-  changeFilter(filter: 'upcoming' | 'completed' | 'past') {
-    this.filter = filter;
-  }
-
   filterNameHandler() {
     console.log('mandando name');
     const filter = this.filter;
+  }
+  changeFilter(filter: 'upcoming' | 'completed' | 'past') {
+    this.filter = filter;
+    console.log(filter);
     this.filterName.emit(filter);
   }
 }
