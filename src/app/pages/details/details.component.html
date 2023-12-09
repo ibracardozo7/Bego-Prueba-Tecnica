@@ -1,8 +1,8 @@
-<div class="container">
+<div class="main">
   <app-header title="Cargo Details" />
 
-  <div class="order-main">
-    <div class="ref-orden">
+  <div class="container">
+    <div class="ref-order">
       <p>Referencia {{ details()?.reference_number }}</p>
       <h4>Order #{{ details()?.order_number }}</h4>
     </div>
@@ -19,13 +19,13 @@
       <div class="list-main">
         <div class="list" *ngFor="let dest of details()?.destinations">
           <!-- <div> -->
-          <span>PickUp</span>
+          <span>{{ dest.status_string }}</span>
           <p class="city">New York</p>
           <p class="address">{{ dest.address }}</p>
           <!-- </div> -->
           <div class="state">
-            <div class="circle"></div>
-            <p>Aceepted</p>
+            <div class="circle" [class.color]="dest.status == 0"></div>
+            <p>{{ dest.status_string }}</p>
           </div>
         </div>
       </div>
@@ -39,81 +39,29 @@
     <p class="date">10:30 PM</p>
 
     <div class="state-main">
-      <div class="check-main">
-        <div class="check">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="{1.5}"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.5 12.75l6 6 9-13.5"
-            />
-          </svg>
-        </div>
-        <div class="check">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="{1.5}"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.5 12.75l6 6 9-13.5"
-            />
-          </svg>
-        </div>
-        <div class="check">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="{1.5}"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.5 12.75l6 6 9-13.5"
-            />
-          </svg>
-        </div>
-        <div class="check">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="{1.5}"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.5 12.75l6 6 9-13.5"
-            />
-          </svg>
-        </div>
-      </div>
-      <div class="state">
+      <div class="item">
+        <app-check />
         <p>Created Order</p>
+      </div>
+      <div class="item">
+        <app-check />
         <p>Aceepted Order</p>
-        <p class="pickup">Pickup set up by William</p>
+      </div>
+      <div class="item">
+        <app-check />
+        <p class="pickup">
+          Pickup set up by {{ (details()?.driver?.nickname?.split(" "))![0] }}
+        </p>
+      </div>
+      <div class="item">
+        <app-check />
         <p class="pickup">Pick Completed</p>
       </div>
     </div>
 
-    <button class="trackOrder">Track Order</button>
+    <button class="trackOrder" [class.active]="details()?.stamp">
+      Track Order
+    </button>
   </div>
 
   <div class="pickupData">
@@ -125,8 +73,14 @@
     <p>
       Isidro Fabela 10, valle verde y Terminal, 50140 Tocula de Lerdo, Mexico.
     </p>
-    <p>14 de Octubre 2023 • 10:30</p>
-    <p>+525567890346</p>
-    <p>johndoegmail.com</p>
+    <div class="date">
+      <p>{{ details()?.start_date | date : "d MMMM, y" }}</p>
+      <h3>•</h3>
+      <p>
+        {{ details()?.start_date | date : "hh:mm" }}
+      </p>
+    </div>
+    <p>{{ details()?.driver?.telephone }}</p>
+    <p>{{ details()?.driver?.email }}</p>
   </div>
 </div>

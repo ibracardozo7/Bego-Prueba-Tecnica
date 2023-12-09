@@ -1,0 +1,15 @@
+.check {
+  width: 26px;
+  height: 26px;
+  background-color: #FFFF00;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  svg {
+    width: 75%;
+    height: 75%;
+    color: #080C0F;
+  }
+}
