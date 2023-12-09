@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './nav.component.scss',
 })
 export class NavComponent {
-  filter: 'upcoming' | 'completed' | 'past' = 'upcoming';
+  filter: 'upcoming' | 'completed' | 'past' | '' = '';
 
   @Output() filterName = new EventEmitter();
 
