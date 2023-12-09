@@ -1,8 +1,8 @@
-.container {
-  margin: 0 auto;
-  min-width: 350px;
+// .container {
+  // margin: 0 auto;
+  // min-width: 350px;
   // margin-bottom: 40px;
-}
+// }
 
 .order {
   color: #CDCDCD;
@@ -14,24 +14,24 @@
 }
 
 .cart {
-  max-width: 350px;
-  border: 0.5px solid #252525;
+  // max-width: 350px;
+  border: 1px solid #252525;
   border-radius: 25px;
   background: linear-gradient(45deg, #080C0F 0%, rgba(39,39,39,0) 100%);
   margin-bottom: 40px;
 
-  .type {
+  .header {
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
     border-bottom: 1px solid #252525;
 
-    .ftl {
+    .type {
       display: flex;
       gap: 12px;
     }
 
-    .orden {
+    .status {
       display: flex;
       align-items: center;
       gap: 8px;
@@ -39,30 +39,32 @@
       .circle {
         width: 11px;
         height: 11px;
-        background-color: #0394ff;
         border-radius: 100%;
+        background-color: #989898;
+      }
+
+      .color {
+        background-color: #0394ff;
       }
     }
   }
 
-  .address-svg {
+  .destinations {
     display: flex;
-    // justify-content: space-between;
     padding: 0 20px;
     margin-bottom: 15px;
 
-    .icon {
+    .icons {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 13px;
+      gap: 14px;
       align-items: center;
       padding-right: 15px;
       padding-top: 20px;
 
-      .linea {
+      .line {
         height: 40px;
-        // width: 1px;
         border: 1px solid #252525;
       }
       .marker {
@@ -73,65 +75,71 @@
 
     .list-main {
       width: 100%;
-    }
-  }
-
-  .list {
-    // max-width: 350px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    // padding: 0 19px;
-    margin: 36px 0 25px 0;
-    overflow: hidden;
-
-    .pickup {
-      display: flex;
-      gap: 12px;
-
-      .name {
-        margin: 0;
-        margin-bottom: 5px;
-        font-size: 10px;
-        color: #7B7B7B;
-      }
-
-      .city {
-        margin: 0;
-        font-size: 14px;
-        margin-bottom: 2px;
-      }
-      
-      .address {
-        width: 180px;
-        margin: 0;
-        font-size: 14px;
+      .list {
+        // max-width: 350px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        // padding: 0 19px;
+        margin: 36px 0 25px 0;
         overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-      }
-    }
-
-    .date {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: flex-end;
-      gap: 2px;
-
-      p {
-        margin: 0;
+    
+        .pickup {
+          display: flex;
+          gap: 12px;
+    
+          .name {
+            margin: 0;
+            margin-bottom: 5px;
+            font-size: 10px;
+            color: #7B7B7B;
+          }
+    
+          .city {
+            margin: 0;
+            font-size: 14px;
+            margin-bottom: 2px;
+          }
+          
+          .address {
+            width: 180px;
+            margin: 0;
+            font-size: 14px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+    
+        .date {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: flex-end;
+          gap: 2px;
+    
+          p {
+            margin: 0;
+          }
+    
+          .fecha {
+            font-size: 12px;
+          }
+          .hora {
+            font-size: 14px;
+          }
+        }
       }
     }
   }
 
-  .btn {
+  .btn-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 
-    .btn-container {
+    .btn {
       max-width: 199px;
       border-radius: 0 25px 25px 25px;
     }
@@ -171,9 +179,7 @@
       align-items: center;
       gap: 14px;
       cursor: pointer;
-
       text-decoration: none;
-      // color: inherit;
     }
   }
 }

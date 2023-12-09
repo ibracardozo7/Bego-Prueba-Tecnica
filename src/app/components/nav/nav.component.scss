@@ -9,18 +9,24 @@
   
   li {
     display: inline;
+    position: relative;
     
     a {
       font-size: 18px;
-      margin: 3px;
       text-decoration: none;
       cursor: pointer;
     }
     
-    a.selected {
+    .selected {
       color: #FFFF00;
-      border-bottom: 1px solid #FFFF00;
       font-weight: 500;
+    }
+
+    .line {
+      position: absolute;
+      top: 125%;
+      width: 30px;
+      border: 1px solid #FFFF00;
     }
   }
 }

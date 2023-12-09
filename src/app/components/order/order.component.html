@@ -1,23 +1,23 @@
-<div class="container">
+<!-- <div class="container"> -->
   <h1 class="order">
     Order <span>#{{ order.order_number }}</span>
   </h1>
   <div class="cart">
-    <div class="type">
-      <div class="ftl">
-        <img src="assets/Order 2/FTL/container-truck.svg" alt="" />
+    <div class="header">
+      <div class="type">
+        <img src="assets/container-truck.svg" alt="" />
         <p>{{ order.type }}</p>
       </div>
-      <div class="orden">
-        <div class="circle"></div>
+      <div class="status">
+        <div class="circle" [class.color]="order.status == 1"></div>
         <p>{{ order.status_string }}</p>
       </div>
     </div>
 
-    <div class="address-svg">
-      <div class="icon">
-        <img src="assets/Order 1/where to/address/Group 2.svg" alt="" />
-        <div class="linea" ></div>
+    <div class="destinations">
+      <div class="icons">
+        <img src="assets/Group 2.svg" alt="" />
+        <div class="line" ></div>
         <img class="marker" src="assets/marker.svg" alt="" />
       </div>
       <div class="list-main">
@@ -30,18 +30,18 @@
             </div>
           </div>
           <div class="date">
-            <p>{{ dest.start_date | date : "shortDate" }}</p>
-            <p>10:45</p>
+            <p class="fecha">{{ dest.start_date | date : "shortDate" }}</p>
+            <p class="hora">{{ dest.start_date | date : "hh:mm" }}</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="btn">
-      @if (contador === 0) {
-      <button class="btn-container end">Its time for pickups</button>
+    <div class="btn-container">
+      @if (order.status == 3) {
+      <button class="btn end">Its time for pickups</button>
       } @else {
-      <button class="btn-container start">
+      <button class="btn start">
         Start pickup in <span>{{ order.start_date | date : "hh:mm" }}</span>
       </button>
       }
@@ -51,4 +51,4 @@
       </button>
     </div>
   </div>
-</div>
+<!-- </div> -->
