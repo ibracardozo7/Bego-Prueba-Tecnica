@@ -145,19 +145,43 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(45deg, #080C0F 0%, rgba(39, 39, 39,0) 100%);
+  background: linear-gradient(45deg, #080C0F 0%, rgba(39, 39, 39,0.1) 100%);
   border: 1px solid #252525;
   border-radius: 6px;
 
   margin-top: 50px;
   position: relative;
-  .photo {
-    position: absolute;
-    top: -13%;
 
+  .photo {
+    box-sizing: border-box;
+    height: 120px;
+    width: 120px;
+    border: 1px solid #1B1F22;
+    background-color: #181D22;
+    position: absolute;
+    border-radius: 100%;
+    top: -13%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .oval-1 {
+      border-radius: 100%;
+      box-sizing: border-box;
+      height: 107.27px;
+      width: 107.27px;
+      border: 1px solid #1F2224;
+      background-color: #151A1E;
+      box-shadow: 0 0 4px 0 #000000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
     img {
       height: 92px;
       width: 92px;
+      border-radius: 100%;
     }
   }
 
@@ -177,7 +201,7 @@
   .date {
     font-size: 20px;
     font-weight: 600;
-    margin-top: 57px;
+    margin-top: 75px;
   }
 
   .trackOrder {
