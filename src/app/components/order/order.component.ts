@@ -20,7 +20,7 @@ export class OrderComponent {
       if (this.contador === 0) {
         clearInterval(intervalo); // Detiene el contador cuando llega a 0
       } else {
-        console.log(this.contador);
+        // console.log(this.contador);
         this.contador--;
       }
     }, 1000);

@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, Output, EventEmitter } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -9,9 +9,19 @@ import { RouterLink } from '@angular/router';
   styleUrl: './nav.component.scss',
 })
 export class NavComponent {
-  filter = signal<'upcoming' | 'completed' | 'past'>('upcoming');
+  filter = "upcoming";
+
+  @Output() filterName = new EventEmitter();
 
   changeFilter(filter: 'upcoming' | 'completed' | 'past') {
-    this.filter.set(filter);
+    this.filter = filter
+    // console.log(filter);
+    
+  }
+
+  filterNameHandler() {
+    console.log('mandando name');
+    const filter = this.filter
+    this.filterName.emit(filter)
   }
 }

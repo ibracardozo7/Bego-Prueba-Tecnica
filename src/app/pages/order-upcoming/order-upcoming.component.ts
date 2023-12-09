@@ -1,4 +1,4 @@
-import { Component, signal, inject } from '@angular/core';
+import { Component, signal, inject, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../components/header/header.component';
 import { SearchComponent } from '../../components/search/search.component';
@@ -10,28 +10,48 @@ import { NavComponent } from '../../components/nav/nav.component';
 @Component({
   selector: 'app-order-upcoming',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, SearchComponent, OrderComponent, NavComponent],
+  imports: [
+    CommonModule,
+    HeaderComponent,
+    SearchComponent,
+    OrderComponent,
+    NavComponent,
+  ],
   templateUrl: './order-upcoming.component.html',
   styleUrl: './order-upcoming.component.scss',
 })
 export class OrderUpcomingComponent {
   orders = signal<Result[]>([]);
+  filter = signal('');
   private ordersServices = inject(OrdersService);
-  contador: number = 6;
+  
+  ordersByFilter = computed(() => {
+    const filter = this.filter();
+    const orders = this.orders();
+
+    if (filter === 'upcoming') {
+      return orders.filter((order) => order.status == 1);
+    }
+
+    if (filter === 'completed') {
+      return orders.filter((order) => order.status == 3);
+    }
+
+    return orders;
+  });
 
   ngOnInit() {
     this.ordersServices.getOrdersUpcoming().subscribe((res) => {
       console.log(res.result);
       this.orders.set(res.result);
     });
-    const intervalo = setInterval(() => {
-      if (this.contador === 0) {
-        clearInterval(intervalo); // Detiene el contador cuando llega a 0
-      } else {
-        console.log(this.contador);
-        this.contador--;
-      }
-    }, 1000);
+
+    console.log("name =>",this.filter);
+    
   }
 
+  nameFilter(name: string) {
+    console.log(name);
+    this.filter.set(name)
+  }
 }
