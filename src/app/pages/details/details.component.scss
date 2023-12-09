@@ -14,10 +14,10 @@
   margin-bottom: 50px;
   border: 1px solid #252525;
   border-right: none;
-  padding: 25px 0;
-  padding-left: 35px;
+  padding: 25px 0 0 35px;
+  // padding-left: 35px;
   border-radius: 25px 0 0 25px;
-  background: linear-gradient(45deg, #080C0F 0%, rgba(39, 39, 39,0) 100%);
+  background: linear-gradient(45deg, #080C0F 0%, rgba(39, 39, 39, 0.1) 100%);
 
   .ref-orden {
     p {
@@ -31,8 +31,57 @@
     }
   }
 
+  .destino {
+    display: flex;
+    align-items: center;
+  
+    .icons {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      align-items: center;
+      margin-right: 20px;
+
+      .truck {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #FFFF00;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .bg {
+          background-color: #FFFF00;
+          border-radius: 100%;
+        }
+      }
+
+      .linea {
+        height: 61px;
+        // width: 1px;
+        border: 1px solid #252525;
+      }
+
+      .circle {
+        width: 40px;
+        height: 40px;
+        background-color: #1e2227;
+        border-radius: 100%;
+        margin-bottom: 2px;
+      }
+    }
+  }
+  
+  .list-main {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    margin-bottom: 26px;
+  }
+
   .list {
-    margin: 15px 0;
+    margin: 0;
     span {
       margin: 0;
       font-size: 12px;
@@ -53,7 +102,7 @@
     }
 
     .state {
-      margin-top: 9px;
+      margin-top: 8px;
       width: 90px;
       display: flex;
       justify-content: space-around;

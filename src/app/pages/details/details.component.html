@@ -6,15 +6,28 @@
       <p>Referencia {{ details()?.reference_number }}</p>
       <h4>Order #{{ details()?.order_number }}</h4>
     </div>
-    <div class="list" *ngFor="let dest of details()?.destinations">
-      <!-- <div> -->
-      <span>PickUp</span>
-      <p class="city">New York</p>
-      <p class="address">{{ dest.address }}</p>
-      <!-- </div> -->
-      <div class="state">
+    <div class="destino">
+      <div class="icons">
+        <div class="truck">
+          <div class="bg">
+            <img src="assets/truck.svg" alt="" />
+          </div>
+        </div>
+        <div class="linea"></div>
         <div class="circle"></div>
-        <p>Aceepted</p>
+      </div>
+      <div class="list-main">
+        <div class="list" *ngFor="let dest of details()?.destinations">
+          <!-- <div> -->
+          <span>PickUp</span>
+          <p class="city">New York</p>
+          <p class="address">{{ dest.address }}</p>
+          <!-- </div> -->
+          <div class="state">
+            <div class="circle"></div>
+            <p>Aceepted</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -25,11 +38,14 @@
     </div>
     <p class="date">10:30 PM</p>
 
-    <div class="state">
-      <p>Created Order</p>
-      <p>Aceepted Order</p>
-      <p class="pickup">Pickup set up by William</p>
-      <p class="pickup">Pick Completed</p>
+    <div>
+      <div></div>
+      <div class="state">
+        <p>Created Order</p>
+        <p>Aceepted Order</p>
+        <p class="pickup">Pickup set up by William</p>
+        <p class="pickup">Pick Completed</p>
+      </div>
     </div>
 
     <button class="trackOrder">Track Order</button>

@@ -54,11 +54,17 @@
     .icon {
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: center;
+      gap: 13px;
       align-items: center;
       padding-right: 15px;
       padding-top: 20px;
 
+      .linea {
+        height: 40px;
+        // width: 1px;
+        border: 1px solid #252525;
+      }
       .marker {
         width: 20px;
         height: 24px;
