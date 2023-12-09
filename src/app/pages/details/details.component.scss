@@ -56,7 +56,6 @@
 
       .linea {
         height: 61px;
-        // width: 1px;
         border: 1px solid #252525;
       }
 
@@ -81,60 +80,60 @@
         }
       }
     }
-  }
-  
-  .list-main {
-    display: flex;
-    flex-direction: column;
-    gap: 26px;
-    margin-bottom: 26px;
-  }
-
-  .list {
-    margin: 0;
-    span {
-      margin: 0;
-      font-size: 12px;
-    }
     
-    .city {
-      margin: 4px 0 0 0;
-      font-size: 16px;
-    }
-
-    .address {
-      width: 230px;
-      margin: 0;
-      font-size: 14px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-
-    .state {
-      margin-top: 8px;
-      width: 90px;
+    .list-main {
       display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 4px 7px;
-      border-radius: 10px;
-      border: 1px solid #252525;
-
-      .circle {
-        width: 11px;
-        height: 11px;
-        background-color: #0394ff;
-        border-radius: 100%;
-      }
-
-      .color {
-        background-color: #949494;
-      }
-
-      p {
+      flex-direction: column;
+      gap: 26px;
+      margin-bottom: 26px;
+      
+      .list {
+      margin: 0;
+      span {
         margin: 0;
         font-size: 12px;
+      }
+      
+      .city {
+        margin: 4px 0 0 0;
+        font-size: 16px;
+      }
+      
+      .address {
+        width: 230px;
+        margin: 0;
+        font-size: 14px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      
+      .state {
+        margin-top: 8px;
+        width: 90px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 4px 7px;
+        border-radius: 10px;
+        border: 1px solid #252525;
+        
+        .circle {
+          width: 11px;
+          height: 11px;
+          background-color: #0394ff;
+          border-radius: 100%;
+        }
+        
+        .color {
+          background-color: #949494;
+        }
+        
+        p {
+          margin: 0;
+          font-size: 12px;
+        }
+        }
       }
     }
   }
@@ -180,21 +179,6 @@
     font-weight: 600;
     margin-top: 57px;
   }
-  
-  // .state {
-  //   margin-top: 30px;
-  //   margin-bottom: 40px;
-  //   display: flex;
-  //   // flex-direction: column;
-  //   gap: 30px;
-  //   p {
-  //     margin: 0;
-  //     font-weight: 600;
-  //   }
-  //   .pickup {
-  //     color: #5B5B5B;
-  //   }
-  // }
 
   .trackOrder {
     width: 100%;
