@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { PickpDataComponent } from '../../components/pickp-data/pickp-data.component';
 import { CheckComponent } from '../../components/check/check.component';
 import { NotCheckComponent } from '../../components/not-check/not-check.component';
+import { LoadingComponent } from '../../components/loading/loading.component';
 
 @Component({
   selector: 'app-details',
@@ -16,6 +17,7 @@ import { NotCheckComponent } from '../../components/not-check/not-check.componen
     PickpDataComponent,
     CheckComponent,
     NotCheckComponent,
+    LoadingComponent,
   ],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss',

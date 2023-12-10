@@ -1,10 +1,14 @@
-<!-- <div class="main"> -->
-  <div class="pickupData" (click)="toggle()">
+<div class="main">
+  <section class="pickupData" (click)="toggle()">
     <h3>Pickup Data</h3>
-    <img src="assets/angle-small-down.svg" alt="" />
-  </div>
+    <img
+      src="assets/angle-small-down.svg"
+      alt="angle"
+      [class.rotate]="!footer"
+    />
+  </section>
 
-  <div class="footer" *ngIf="footer">
+  <footer class="footer" *ngIf="footer">
     <p>
       Isidro Fabela 10, valle verde y Terminal, 50140 Tocula de Lerdo, Mexico.
     </p>
@@ -17,5 +21,5 @@
     </div>
     <p>{{ driver.driver.telephone }}</p>
     <p>{{ driver.driver.email }}</p>
-  </div>
-<!-- </div> -->
+  </footer>
+</div>

@@ -3,24 +3,24 @@
     <li>
       <a
         (click)="changeFilter('upcoming')"
-        [class.selected]="filter === 'upcoming'"
+        [class.selected]="filter() === 'upcoming'"
         >Upcoming</a
       >
-      <div [class.line]="filter === 'upcoming'"></div>
+      <div [class.line]="filter() === 'upcoming'"></div>
     </li>
     <li>
       <a
         (click)="changeFilter('completed')"
-        [class.selected]="filter === 'completed'"
+        [class.selected]="filter() === 'completed'"
         >Completed</a
       >
-      <div [class.line]="filter === 'completed'"></div>
+      <div [class.line]="filter() === 'completed'"></div>
     </li>
     <li>
-      <a (click)="changeFilter('past')" [class.selected]="filter === 'past'"
+      <a (click)="changeFilter('past')" [class.selected]="filter() === 'past'"
         >Past</a
       >
-      <div [class.line]="filter === 'past'"></div>
+      <div [class.line]="filter() === 'past'"></div>
     </li>
   </ul>
 </nav>

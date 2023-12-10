@@ -1,35 +1,44 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, FormsModule],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss',
 })
 export class SearchComponent {
-  orderFilter = new FormControl('', {
+  orderSearch = new FormControl('', {
     nonNullable: true,
     validators: [Validators.required],
   });
 
   @Output() searchFilter = new EventEmitter();
+  name = '';
+  changeHandler(event: Event) {
+    // if (this.orderSearch.valid) {
+    //   const value = this.orderSearch.value
+    //   console.log(value);
 
-  search() {
-    console.log("search");
-    this.searchFilter.emit(this.orderFilter);
+    //   if (value) {
+    //     this.searchSearch.emit(value)
+    //   }
+    // }
+    console.log(event);
+    const input = event.target as HTMLInputElement;
+    console.log(input.value);
+    this.searchFilter.emit(input.value);
   }
-
-  changeHandler() {
-    if (this.orderFilter.valid) {
-      const value = this.orderFilter.value.trim();
-      console.log(value);
-
-      if (value) {
-        // this.addTask(value);
-        this.searchFilter.emit(value)
-      }
-    }
+  
+  enviarDatos() {
+    console.log('new');
+    console.log(this.name);
+    this.searchFilter.emit(this.name);
   }
 }

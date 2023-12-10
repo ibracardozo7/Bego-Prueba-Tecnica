@@ -3,6 +3,6 @@
   <app-nav (filterName)="nameFilter($event)" />
   <app-search (searchFilter)="searchFilter($event)" />
   <div class="list">
-    <app-order *ngFor="let order of ordersByFilter()" [order]="order" />
+    <app-order *ngFor="let order of ordersBySearch()" [order]="order" />
   </div>
 </div>

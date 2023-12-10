@@ -69,33 +69,8 @@
       </button>
     </section>
   
-    <section class="pickupData" (click)="toggle()">
-      <h3>Pickup Data</h3>
-      <img
-        src="assets/angle-small-down.svg"
-        alt="angle"
-        [class.rotate]="!footer"
-      />
-    </section>
-  
-    <footer class="footer" *ngIf="footer">
-      <p>
-        Isidro Fabela 10, valle verde y Terminal, 50140 Tocula de Lerdo, Mexico.
-      </p>
-      <div class="date">
-        <p>{{ details()?.start_date | date : "d MMMM, y" }}</p>
-        <h3>•</h3>
-        <p>
-          {{ details()?.start_date | date : "hh:mm" }}
-        </p>
-      </div>
-      <p>{{ details()?.driver?.telephone }}</p>
-      <p>{{ details()?.driver?.email }}</p>
-    </footer>
+    <app-pickp-data [driver]="driver" />
   } @else {
-    <div class="loading">
-      <p>Loading...</p>
-      <div class="loader"></div>
-    </div>
+    <app-loading />
   }
 </div>

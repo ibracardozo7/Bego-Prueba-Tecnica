@@ -30,16 +30,27 @@ export class OrderUpcomingComponent {
   ordersByFilter = computed(() => {
     const filter = this.filter();
     const orders = this.orders();
-
     if (filter === 'upcoming') {
       return orders.filter((order) => order.status == 1);
     }
-
     if (filter === 'completed') {
       return orders.filter((order) => order.status == 3);
     }
-
+    if (filter === 'past') {
+      return orders.filter((order) => order.status == 2);
+    }
     return orders;
+  });
+
+  ordersBySearch = computed(() => {
+    const search = this.search();
+    const order = this.ordersByFilter();
+
+    if (search) {
+      return order.filter((order) => order.order_number.startsWith(search));
+    }
+
+    return order;
   });
 
   ngOnInit() {
@@ -47,17 +58,22 @@ export class OrderUpcomingComponent {
       // console.log(res.result);
       this.orders.set(res.result);
     });
-
-    // console.log("name =>",this.filter);
   }
 
   nameFilter(name: 'upcoming' | 'completed' | 'past') {
     console.log(name);
-    this.filter.set(name);
+    this.filter.update((prev) => {
+      if (prev == name) {
+        return '';
+      }
+
+      return name;
+    });
   }
 
   searchFilter(order: any) {
     console.log(order);
-    this.search.set(order);
+    const search = order.toUpperCase()
+    this.search.set(search);
   }
 }

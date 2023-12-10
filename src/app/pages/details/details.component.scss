@@ -186,6 +186,12 @@
     }
   }
 
+  .date {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 75px;
+  }
+
   .state-main {
     display: flex;
     // align-items: center;
@@ -197,12 +203,6 @@
       align-items: center;
       gap: 26px;
     }
-  }
-
-  .date {
-    font-size: 20px;
-    font-weight: 600;
-    margin-top: 75px;
   }
 
   .trackOrder {
@@ -220,75 +220,5 @@
 
   .active {
     background-color: #FFFF00;
-  }
-}
-
-.pickupData {
-  width: 69%;
-  max-width: 350;
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid #252525 ;
-  padding: 0 27px;
-  background: linear-gradient(45deg, #080C0F 0%, rgba(85,85,85,0) 100%);
-  border-radius: 6px;
-  margin-bottom: 30px;
-  h3 {
-    font-size: 16px;
-  }
-
-  .rotate {
-    transform: rotate(180deg);
-  }
-}
-
-.footer {
-  width: 70%;
-  margin-bottom: 30px;
-  padding-left: 7px;
-  padding-right: 15px;
-
-  p {
-    // margin: 0;
-    font-size: 16px;
-  }
-
-  .date {
-    height: 30px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    h3 {
-      font-weight: 800;
-    }
-  }
-}
-
-.loading {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-  gap: 20px;
-
-  p {
-    font-size: 20px;
-  }
-
-  .loader {
-    border: 4px solid transparent;
-    border-top: 4px solid #FFFF00;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
   }
 }
